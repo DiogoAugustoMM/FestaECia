@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Trabalho_POO
 {
-    internal class Cerimonia
+    internal class Aniversario
     {
     }
 }
