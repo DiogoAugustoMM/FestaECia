@@ -20,7 +20,7 @@ namespace Calculadora
             Console.WriteLine("Qual a quantidade de convidados?");
             int quantconvidados = int.Parse(Console.ReadLine());
 
-            festaECia.CriarEvento(new DateTime(2024,06,11), quantconvidados, "111111");
+            festaECia.CriarEvento(new DateTime(2024,06,11), quantconvidados, tipoevento);
             
 
         }

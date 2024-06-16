@@ -10,12 +10,14 @@ namespace Trabalho_POO
     {
         public string Tipo { get; set; }
         public int Capacidade { get; set; }
+        public int Valor { get; set; }
         public DateTime[] Datas = new DateTime[31];
 
-        public Espaco(string tipo, int capacidade)
+        public Espaco(string tipo, int capacidade, int valor)
         {
             this.Tipo = tipo;
             this.Capacidade = capacidade;
+            this.Valor = valor;
         }
         public bool AdicionaData(DateTime data)
         {
@@ -30,7 +32,7 @@ namespace Trabalho_POO
             }
             return false;
         }
-        public DateTime VerificaDataDisponivel(DateTime dataAtual)
+        public DateTime ProximaDataDisponivel(DateTime dataAtual)
         {
             //aumenta 30 dias
             DateTime dataDesejada = dataAtual.AddDays(30);

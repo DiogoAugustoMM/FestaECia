@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Trabalho_POO
 {
-    internal class Cerimonia
+    internal class Evento
     {
         public Espaco Espaco { get; set; }
         public int Convidados { get; set; }
@@ -17,7 +17,7 @@ namespace Trabalho_POO
 
         public double ValorEspaco { get; set; }
 
-        public Cerimonia(DateTime data, int convidados, Espaco espaco, string cpfnoiva, double valor)
+        public Evento(DateTime data, int convidados, Espaco espaco, string cpfnoiva, double valor)
         {
             this.Convidados = convidados;
             this.Data = data;
