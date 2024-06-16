@@ -139,6 +139,7 @@ namespace Trabalho_POO
                 if (tipoEvento == 1)
                 {
                     nova = new Casamento(convidados, data, disponivel.Valor, disponivel, cpf);
+                    ((Casamento)nova).DeclaraNivel();
                 }
                 else if (tipoEvento == 2)
                 {
