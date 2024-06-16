@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\diogo\\.nuget\\packages\\": {}
+    "C:\\Users\\gabri\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\diogo\\OneDrive\\Área de Trabalho\\PUC\\3° semestre\\POO\\Trabalho\\Trabalho POO\\Trabalho POO\\Trabalho POO.csproj",
+      "projectUniqueName": "D:\\projetos\\TrabalhoPOO\\Trabalho POO\\Trabalho POO.csproj",
       "projectName": "Trabalho POO",
-      "projectPath": "C:\\Users\\diogo\\OneDrive\\Área de Trabalho\\PUC\\3° semestre\\POO\\Trabalho\\Trabalho POO\\Trabalho POO\\Trabalho POO.csproj",
-      "packagesPath": "C:\\Users\\diogo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\diogo\\OneDrive\\Área de Trabalho\\PUC\\3° semestre\\POO\\Trabalho\\Trabalho POO\\Trabalho POO\\obj\\",
+      "projectPath": "D:\\projetos\\TrabalhoPOO\\Trabalho POO\\Trabalho POO.csproj",
+      "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
+      "outputPath": "D:\\projetos\\TrabalhoPOO\\Trabalho POO\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\diogo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -40,6 +40,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -61,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
