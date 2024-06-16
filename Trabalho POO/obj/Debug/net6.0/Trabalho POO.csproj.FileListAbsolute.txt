@@ -13,3 +13,18 @@ C:\Users\diogo\OneDrive\Área de Trabalho\PUC\3° semestre\POO\Trabalho\Trabalho
 C:\Users\diogo\OneDrive\Área de Trabalho\PUC\3° semestre\POO\Trabalho\Trabalho POO\Trabalho POO\obj\Debug\net6.0\Trabalho POO.pdb
 C:\Users\diogo\OneDrive\Área de Trabalho\PUC\3° semestre\POO\Trabalho\Trabalho POO\Trabalho POO\obj\Debug\net6.0\Trabalho POO.genruntimeconfig.cache
 C:\Users\diogo\OneDrive\Área de Trabalho\PUC\3° semestre\POO\Trabalho\Trabalho POO\Trabalho POO\obj\Debug\net6.0\ref\Trabalho POO.dll
+C:\Users\Win\Source\Repos\DiogoAugustoMM\TrabalhoPOO\Trabalho POO\bin\Debug\net6.0\Trabalho POO.exe
+C:\Users\Win\Source\Repos\DiogoAugustoMM\TrabalhoPOO\Trabalho POO\bin\Debug\net6.0\Trabalho POO.deps.json
+C:\Users\Win\Source\Repos\DiogoAugustoMM\TrabalhoPOO\Trabalho POO\bin\Debug\net6.0\Trabalho POO.runtimeconfig.json
+C:\Users\Win\Source\Repos\DiogoAugustoMM\TrabalhoPOO\Trabalho POO\bin\Debug\net6.0\Trabalho POO.dll
+C:\Users\Win\Source\Repos\DiogoAugustoMM\TrabalhoPOO\Trabalho POO\bin\Debug\net6.0\Trabalho POO.pdb
+C:\Users\Win\Source\Repos\DiogoAugustoMM\TrabalhoPOO\Trabalho POO\obj\Debug\net6.0\Trabalho POO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Win\Source\Repos\DiogoAugustoMM\TrabalhoPOO\Trabalho POO\obj\Debug\net6.0\Trabalho POO.AssemblyInfoInputs.cache
+C:\Users\Win\Source\Repos\DiogoAugustoMM\TrabalhoPOO\Trabalho POO\obj\Debug\net6.0\Trabalho POO.AssemblyInfo.cs
+C:\Users\Win\Source\Repos\DiogoAugustoMM\TrabalhoPOO\Trabalho POO\obj\Debug\net6.0\Trabalho POO.csproj.CoreCompileInputs.cache
+C:\Users\Win\Source\Repos\DiogoAugustoMM\TrabalhoPOO\Trabalho POO\obj\Debug\net6.0\Trabalho POO.sourcelink.json
+C:\Users\Win\Source\Repos\DiogoAugustoMM\TrabalhoPOO\Trabalho POO\obj\Debug\net6.0\Trabalho POO.dll
+C:\Users\Win\Source\Repos\DiogoAugustoMM\TrabalhoPOO\Trabalho POO\obj\Debug\net6.0\refint\Trabalho POO.dll
+C:\Users\Win\Source\Repos\DiogoAugustoMM\TrabalhoPOO\Trabalho POO\obj\Debug\net6.0\Trabalho POO.pdb
+C:\Users\Win\Source\Repos\DiogoAugustoMM\TrabalhoPOO\Trabalho POO\obj\Debug\net6.0\Trabalho POO.genruntimeconfig.cache
+C:\Users\Win\Source\Repos\DiogoAugustoMM\TrabalhoPOO\Trabalho POO\obj\Debug\net6.0\ref\Trabalho POO.dll
