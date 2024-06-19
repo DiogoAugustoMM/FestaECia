@@ -18,8 +18,5 @@ namespace Trabalho_POO
         }
     }
 
-    public void DecorarBolo(string nivel)
-    {
-        //
-    }
+
 }
