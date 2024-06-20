@@ -12,6 +12,7 @@ namespace Trabalho_POO
 
         public Empresarial(int convidados, DateTime data, int valorEspaco, Espaco espaco, string cpf) : base(data, convidados, espaco, cpf, valorEspaco)
         {
+            this.TipoEvento = "empresarial";
         }
 
       

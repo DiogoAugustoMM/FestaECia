@@ -49,22 +49,64 @@ namespace Trabalho_POO
 
             int opcao = MenuPrincipal();
 
-            if (opcao == 1) 
+            if (opcao == 1)
             {
                 int tipoevento = festaECia.TiposEventos();
 
-                Console.WriteLine("Qual a quantidade de convidados?");
+                Console.WriteLine("\nQual a quantidade de convidados?");
                 int quantconvidados = int.Parse(Console.ReadLine());
 
                 Evento evento = festaECia.CriarEvento(new DateTime(2024, 06, 20), quantconvidados, tipoevento);
 
-                evento.CalcularValorBebidas();
-                evento.CalcularValorComidas();
+                if (evento.TipoEvento != "livre")
+                {
+                    evento.CalcularValorBebidas();
+                    evento.CalcularValorComidas();
 
-                Console.WriteLine("valor das comidas: "+evento.ValorComidas);
+                    Console.WriteLine("**** VALORES ****");
+                    Console.WriteLine("\n\nO valor das comidas é: " + evento.ValorBebidas);                  
+                    Console.WriteLine("\nO valor das bebidas é: " + evento.ValorComidas);
+                    Console.WriteLine("\nO valor do espaço é: " + evento.Espaco.Valor);
+                    Console.WriteLine("\nO valor total é: " + (evento.Espaco.Valor + evento.ValorBebidas +evento.ValorComidas));
 
 
-                
+                    Console.WriteLine("\nDigite 1 para confirmar o evento e 2 para cancelar");
+                    int confirme = int.Parse(Console.ReadLine());
+                    if (confirme == 1)
+                    {
+                        //salvar evento no arquivo
+                    }
+                    else
+                    {
+                        Console.WriteLine("Agendamento cancelado");
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("o valor do espaço é: " + evento.Espaco.Valor);
+                    Console.WriteLine("\nDigite 1 para confirmar o evento e 2 para cancelar");
+                    int confirme = int.Parse(Console.ReadLine());
+                    if (confirme == 1)
+                    {
+                        //salvar evento no arquivo
+                    }
+                    else
+                    {
+                        Console.WriteLine("Agendamento cancelado");
+                    }
+
+                }
+
+
+            }
+            else if (opcao == 2)
+            {
+                //pesquisar o evento
+            }
+            else if (opcao == 3) 
+            {
+                Console.WriteLine("saindo...");
             }
             
             

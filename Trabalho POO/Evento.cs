@@ -9,6 +9,7 @@ namespace Trabalho_POO
     internal class Evento
     {
         public Espaco Espaco { get; set; }
+        public string TipoEvento { get; set; }
         public int Convidados { get; set; }
         public DateTime Data { get; set; }
         public string CPFNoiva { get; set; }
@@ -25,6 +26,7 @@ namespace Trabalho_POO
             this.CPFNoiva = cpfnoiva;
             this.ValorEspaco = valor;
             this.Nivel = null;
+            this.TipoEvento = "livre";
 
         }
 
@@ -34,7 +36,7 @@ namespace Trabalho_POO
             do
             {
                 // Solicita ao usuário para escolher um nível
-                Console.WriteLine("Qual o nivel desejado para o evento?" +
+                Console.WriteLine("\nQual o nivel desejado para o evento?" +
                         "\n 1. Standard" +
                         "\n 2. Luxo" +
                         "\n 3. Premier");

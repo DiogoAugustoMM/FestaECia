@@ -40,6 +40,7 @@ namespace Trabalho_POO
                 Console.WriteLine("a proxima data disponivel é em " + Espacos[6].ProximaDataDisponivel(data) + " No espaço" + Espacos[6].Tipo
                 + "\nDeseja essa Data?(disgite sim ou não)");
                 string opcao = Console.ReadLine();
+                opcao = opcao.ToLower();
                 if (opcao == "sim")
                 {
                     Espacos[6].AdicionaData(Espacos[6].ProximaDataDisponivel(data));
@@ -123,13 +124,13 @@ namespace Trabalho_POO
             {
                 try
                 {
-                    Console.WriteLine("Digite seu CPF (somente números, 11 dígitos):");
+                    Console.WriteLine("\nDigite seu CPF (somente números, 11 dígitos):");
                     cpf = Console.ReadLine();
 
                     // Verifica se a entrada contém exatamente 11 caracteres
                     if (cpf.Length != 11)
                     {
-                        throw new FormatException("O CPF deve conter exatamente 11 dígitos.");
+                        throw new FormatException("\nO CPF deve conter exatamente 11 dígitos.");
                     }
 
                     // Tenta converter a entrada em um número
@@ -194,7 +195,6 @@ namespace Trabalho_POO
                     if (Cerimonias[i] == null)
                     {
                         Cerimonias[i] = nova;
-                        Console.WriteLine("Cerimonia no espaço {0} confirmada!", disponivel.Tipo);
                         return nova;
                     }
                 }
@@ -224,7 +224,7 @@ namespace Trabalho_POO
             do
             {
                 // Exibe as opções de eventos
-                Console.WriteLine("Os eventos ofertados são:" +
+                Console.WriteLine("\nOs eventos ofertados são:" +
                 "\n 1. Casamento" +
                 "\n 2. Aniversario" +
                 "\n 3. Festa de Empresa" +

@@ -13,6 +13,7 @@ namespace Trabalho_POO
 
         public Casamento(int convidados, DateTime data, int valorEspaco, Espaco espaco, string cpf) : base(data, convidados, espaco, cpf, valorEspaco)
         {
+            this.TipoEvento = "casamento";
         }
 
        
