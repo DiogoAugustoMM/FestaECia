@@ -144,14 +144,17 @@ namespace Trabalho_POO
                 else if (tipoEvento == 2)
                 {
                     nova = new Aniversario(convidados, data, disponivel.Valor, disponivel, cpf);
+                    ((Aniversario)nova).DeclaraNivel();
                 }
                 else if (tipoEvento == 3)
                 {
-                    nova = new Aniversario(convidados, data, disponivel.Valor, disponivel, cpf);
+                    nova = new Empresarial(convidados, data, disponivel.Valor, disponivel, cpf);
+                    ((Empresarial)nova).DeclaraNivel();
                 }
                 else if (tipoEvento == 4)
                 {
-                    nova = new Aniversario(convidados, data, disponivel.Valor, disponivel, cpf);
+                    nova = new Formatura(convidados, data, disponivel.Valor, disponivel, cpf);
+                    ((Formatura)nova).DeclaraNivel();
                 }
                 else
                 {
