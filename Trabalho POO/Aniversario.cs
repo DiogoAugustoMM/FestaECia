@@ -16,10 +16,5 @@ namespace Trabalho_POO
         {
         }
 
-        public void DeclaraNivel()
-        {
-            this.Nivel = "standard";
-        }
-
     }
 }
