@@ -105,7 +105,7 @@ namespace Trabalho_POO
             return valorComidas;
         }
 
-        public double CalcularValorBebidas()
+        public virtual double CalcularValorBebidas()
         {
             double valorBebidas = 0;
 
