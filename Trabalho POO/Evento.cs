@@ -17,6 +17,7 @@ namespace Trabalho_POO
         public double ValorEspaco { get; set; }
         public double ValorComidas { get; set; }
         public double ValorBebidas { get; set; }
+        public double ValorAdicionais { get; set; }
 
         public Evento(DateTime data, int convidados, Espaco espaco, string cpfnoiva, double valor)
         {
@@ -132,6 +133,37 @@ namespace Trabalho_POO
             return valorBebidas;
         }
 
+
+        public double CalculaValorAdicionais(){
+            double valorAdicionais = 0;
+            double precoBase = 0;
+
+            // Determinar o preço base conforme o tipo de festa
+            string NivelLower = Nivel.ToLower();
+
+            if (NivelLower == "standard")
+            {
+                precoBase = 120;
+            }
+            else if (NivelLower == "luxo")
+            {
+                precoBase = 175;
+            }
+            else if (NivelLower == "premier")
+            {
+                precoBase = 230;
+            }
+            else
+            {
+                throw new ArgumentException("Tipo de festa inválido.");
+            }
+
+            valorAdicionais = precoBase;
+            this.ValorAdicionais= valorAdicionais;
+            return ValorAdicionais;
+        }
+
+
         public double CalcularValorFesta()
         {
             double valorTotal = ValorEspaco;
@@ -140,8 +172,7 @@ namespace Trabalho_POO
             valorTotal += CalcularValorComidas();
 
             // Calcular valor dos serviços adicionais
-
-            // ***** FAZER
+            valorTotal += CalculaValorAdicionais();
 
             // Calcular valor das bebidas
             valorTotal += CalcularValorBebidas();
@@ -153,7 +184,9 @@ namespace Trabalho_POO
         {
             double valorComidas = CalcularValorComidas();
             double valorBebidas = CalcularValorBebidas();
-            double valorTotal = valorComidas + valorBebidas + ValorEspaco;
+            double valorAdicionais = CalculaValorAdicionais();
+
+            double valorTotal = valorComidas + valorBebidas + ValorEspaco + ValorAdicionais;
 
             // Detalhes de bebidas
             int garrafasAgua = (int)Math.Ceiling(Convidados * 0.5 / 1.5);
@@ -165,7 +198,8 @@ namespace Trabalho_POO
             string resumo = $"Resumo da Festa:\n";
             resumo += $"Tipo de Festa: {Nivel}\n";
             resumo += $"Quantidade de Convidados: {Convidados}\n";
-            resumo += $"Valor do Espaço: {ValorEspaco:C}\n\n";
+            resumo += $"Valor do Espaço: {ValorEspaco:C}\n";
+            resumo += $"Valores adicionais: {ValorAdicionais:C} \n\n";
 
             resumo += "Detalhes das Comidas:\n";
             resumo += $"Valor das Comidas: {valorComidas:C}\n\n";
@@ -180,7 +214,28 @@ namespace Trabalho_POO
 
             resumo += $"Valor Total da Festa: {valorTotal:C}\n";
 
+            resumo += "<<<<<<<<--------- --------->>>>>>>>>";
+
             return resumo;
+        }
+
+        public void SalvarResumo()
+        {
+
+            try
+            {
+                string txtSalvo = @"C:\Users\gabri\source\repos\TrabalhoPOO/agendamento.txt";
+
+                using (StreamWriter sw = File.AppendText(txtSalvo))
+                {
+                    sw.WriteLine(GerarResumo());
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+
         }
 
     }

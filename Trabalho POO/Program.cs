@@ -62,19 +62,23 @@ namespace Trabalho_POO
                 {
                     evento.CalcularValorBebidas();
                     evento.CalcularValorComidas();
+                    evento.CalculaValorAdicionais();
 
                     Console.WriteLine("**** VALORES ****");
                     Console.WriteLine("\n\nO valor das comidas é: " + evento.ValorBebidas);                  
-                    Console.WriteLine("\nO valor das bebidas é: " + evento.ValorComidas);
-                    Console.WriteLine("\nO valor do espaço é: " + evento.Espaco.Valor);
-                    Console.WriteLine("\nO valor total é: " + (evento.Espaco.Valor + evento.ValorBebidas +evento.ValorComidas));
+                    Console.WriteLine("O valor das bebidas é: " + evento.ValorComidas);
+                    Console.WriteLine("O valor do espaço é: " + evento.Espaco.Valor);
+                    Console.WriteLine("O valor dos adicionais é: " + evento.ValorAdicionais);
+                    Console.WriteLine("\nO valor total é: " + (evento.Espaco.Valor + evento.ValorBebidas + evento.ValorComidas + evento.ValorAdicionais));
+                    Console.WriteLine("<<<<<<<<--------- --------->>>>>>>>>");
 
 
                     Console.WriteLine("\nDigite 1 para confirmar o evento e 2 para cancelar");
                     int confirme = int.Parse(Console.ReadLine());
                     if (confirme == 1)
                     {
-                        //salvar evento no arquivo
+                        evento.SalvarResumo();
+                        Console.WriteLine("Salvo com Sucesso!!!!");
                     }
                     else
                     {
@@ -89,7 +93,8 @@ namespace Trabalho_POO
                     int confirme = int.Parse(Console.ReadLine());
                     if (confirme == 1)
                     {
-                        //salvar evento no arquivo
+                        evento.SalvarResumo();
+                        Console.WriteLine("Salvo com Sucesso!!!!");
                     }
                     else
                     {
@@ -102,7 +107,19 @@ namespace Trabalho_POO
             }
             else if (opcao == 2)
             {
-                //pesquisar o evento
+                //string cpf = Console.ReadLine();
+                string txtSalvo = @"C:\Users\gabri\source\repos\TrabalhoPOO/agendamento.txt";
+
+                using (StreamReader sr = new StreamReader(txtSalvo))
+                {
+                    string dados;
+
+                    while ((dados = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(dados);
+                    }
+
+                }
             }
             else if (opcao == 3) 
             {

@@ -33,10 +33,5 @@ namespace Trabalho_POO
             }
             return bebidasStr;
         }
-
-        public void ComesBebes(string nivel)
-        {
-            //
-        }
     }
 }

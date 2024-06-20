@@ -8,12 +8,12 @@ namespace Trabalho_POO
 {
     public class ItemMesa : IServicos
     {
-        public string Nível { get; set; }
+        public string Nivel { get; set; }
         public int Valor { get ; set; }
 
         public ItemMesa(string nível, int valor)
         {
-            Nível = nível;
+            Nivel = nível;
             Valor = valor;
         }
     }
