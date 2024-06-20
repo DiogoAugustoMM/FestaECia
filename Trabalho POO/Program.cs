@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Trabalho_POO;
 
-namespace Calculadora
+namespace Trabalho_POO
 {
     internal class Program
     {
@@ -31,6 +31,8 @@ namespace Calculadora
 
             double valorTotal = valorComidas + valorBebidas + valorEspaco;
 
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
             Console.WriteLine($"Valor das comidas: {valorComidas:C}");
             Console.WriteLine($"Valor das bebidas: {valorBebidas:C}");
             Console.WriteLine($"Valor do espaço: {valorEspaco:C}");

@@ -26,6 +26,49 @@ namespace Trabalho_POO
 
         }
 
+        public void DeclaraNivel()
+        {
+            int opcao = -1;
+            do
+            {
+                // Solicita ao usuário para escolher um nível
+                Console.WriteLine("Qual o nivel desejado para o evento?" +
+                        "\n 1. Standard" +
+                        "\n 2. Luxo" +
+                        "\n 3. Premier");
+                try
+                {
+                    // Tenta converter a entrada do usuário para um número inteiro
+                    opcao = int.Parse(Console.ReadLine());
+
+                    // Verifica se a opção está fora do intervalo de 1 a 3
+                    if (opcao < 1 || opcao > 3)
+                    {
+                        Console.WriteLine("Por favor, selecione uma opção válida (1, 2 ou 3).");
+                        opcao = -1; // Reseta a opção para um valor inválido para continuar o loop
+                    }
+                }
+                catch (FormatException)
+                {
+                    // Informa ao usuário para digitar um número se a entrada não puder ser convertida para um número inteiro
+                    Console.WriteLine("Responda com o numero desejado!!!");
+                }
+            } while (opcao == -1); // Repete o loop até que um número válido seja inserido
+
+            if (opcao == 1)
+            {
+                this.Nivel = "standard";
+            }
+            else if (opcao == 2)
+            {
+                this.Nivel = "luxo";
+            }
+            else
+            {
+                this.Nivel = "premier";
+            }
+        }
+
         public double CalcularValorComidas()
         {
             double valorComidas = 0;
@@ -61,6 +104,7 @@ namespace Trabalho_POO
         {
             double valorBebidas = 0;
 
+
             // Água (1 garrafa de 500ml por pessoa)
             int garrafasAgua = (int)Math.Ceiling((double)Convidados * 0.5 / 1.5);  // 1.5L garrafas
             valorBebidas += garrafasAgua * 5;
@@ -80,9 +124,6 @@ namespace Trabalho_POO
             // Espumante (1 garrafa para cada 2 pessoas)
             int garrafasEspumanteNacional = (int)Math.Ceiling((double)Convidados / 2.0);  // 750ml garrafas
             valorBebidas += garrafasEspumanteNacional * 80;
-
-            int garrafasEspumanteImportado = (int)Math.Ceiling((double)Convidados / 2.0);  // 750ml garrafas
-            valorBebidas += garrafasEspumanteImportado * 140;
 
             return valorBebidas;
         }
@@ -116,7 +157,6 @@ namespace Trabalho_POO
             int garrafasRefrigerante = (int)Math.Ceiling(Convidados * 0.4 / 2);
             int garrafasCervejaComum = (int)Math.Ceiling((double)Convidados * 3);
             int garrafasEspumanteNacional = (int)Math.Ceiling(Convidados / 2.0);
-            int garrafasEspumanteImportado = (int)Math.Ceiling(Convidados / 2.0);
 
             string resumo = $"Resumo da Festa:\n";
             resumo += $"Tipo de Festa: {Nivel}\n";
@@ -132,7 +172,6 @@ namespace Trabalho_POO
             resumo += $"Refrigerante: {garrafasRefrigerante} garrafas de 2L\n";
             resumo += $"Cerveja Comum: {garrafasCervejaComum} garrafas de 600ml\n";
             resumo += $"Espumante Nacional: {garrafasEspumanteNacional} garrafas de 750ml\n";
-            resumo += $"Espumante Importado: {garrafasEspumanteImportado} garrafas de 750ml\n";
             resumo += $"Valor das Bebidas: {valorBebidas:C}\n\n";
 
             resumo += $"Valor Total da Festa: {valorTotal:C}\n";
