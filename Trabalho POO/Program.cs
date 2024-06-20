@@ -10,19 +10,69 @@ namespace Trabalho_POO
 {
     internal class Program
     {
+        static int MenuPrincipal()
+        {
+            int opcao = -1;
+            do
+            {
+                Console.WriteLine("******* Festa&Cina *******");
+                Console.WriteLine();
+                Console.WriteLine("Opções:");
+                Console.WriteLine();
+                Console.WriteLine("1. Quero fazer um evento" +
+                    "\n2. Quero pesquisar um evento" +
+                    "\n3. Sair");
+                try
+                {
+                    opcao = int.Parse(Console.ReadLine());
+
+                    if (opcao < 1 || opcao > 3)
+                    {
+                        Console.WriteLine("Escolha uma opção entre 1 e 3 por favor");
+                        opcao = -1;
+                    }
+
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Escolha um numero!!!");
+                    opcao = -1;
+                }
+
+            }while (opcao==-1);
+            return opcao;
+        }
         static void Main(string[] args)
         {
 
             FestaECia festaECia = new FestaECia();
 
-            int tipoevento = festaECia.TiposEventos();
+            int opcao = MenuPrincipal();
 
-            Console.WriteLine("Qual a quantidade de convidados?");
-            int quantconvidados = int.Parse(Console.ReadLine());
+            if (opcao == 1) 
+            {
+                int tipoevento = festaECia.TiposEventos();
 
-            festaECia.CriarEvento(new DateTime(2024, 06, 11), quantconvidados, tipoevento);
-            Evento evento = festaECia.Cerimonias[0];
+                Console.WriteLine("Qual a quantidade de convidados?");
+                int quantconvidados = int.Parse(Console.ReadLine());
 
+                Evento evento = festaECia.CriarEvento(new DateTime(2024, 06, 20), quantconvidados, tipoevento);
+
+                evento.CalcularValorBebidas();
+                evento.CalcularValorComidas();
+
+                Console.WriteLine("valor das comidas: "+evento.ValorComidas);
+
+
+                
+            }
+            
+            
+
+            
+
+            
+            /*
 
 
             double valorComidas = evento.CalcularValorComidas();
@@ -42,8 +92,9 @@ namespace Trabalho_POO
 
             string resumo = evento.GerarResumo();
             Console.WriteLine(resumo);
-
+            
             Console.ReadLine();
+            */
         }
     }
 }

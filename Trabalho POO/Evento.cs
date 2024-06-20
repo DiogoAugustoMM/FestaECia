@@ -14,6 +14,8 @@ namespace Trabalho_POO
         public string CPFNoiva { get; set; }
         public string Nivel { get; set; }
         public double ValorEspaco { get; set; }
+        public double ValorComidas { get; set; }
+        public double ValorBebidas { get; set; }
 
         public Evento(DateTime data, int convidados, Espaco espaco, string cpfnoiva, double valor)
         {
@@ -96,7 +98,7 @@ namespace Trabalho_POO
 
             // Multiplicar o preço base pelo número de convidados
             valorComidas = precoBase * Convidados;
-
+            this.ValorComidas= valorComidas;
             return valorComidas;
         }
 
@@ -124,7 +126,7 @@ namespace Trabalho_POO
             // Espumante (1 garrafa para cada 2 pessoas)
             int garrafasEspumanteNacional = (int)Math.Ceiling((double)Convidados / 2.0);  // 750ml garrafas
             valorBebidas += garrafasEspumanteNacional * 80;
-
+            this.ValorBebidas = valorBebidas;
             return valorBebidas;
         }
 

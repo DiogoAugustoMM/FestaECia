@@ -116,7 +116,7 @@ namespace Trabalho_POO
             }
         }
 
-        public bool CriarEvento(DateTime data, int convidados, int tipoEvento)
+        public Evento CriarEvento(DateTime data, int convidados, int tipoEvento)
         {
             string cpf;
             while (true)
@@ -153,12 +153,12 @@ namespace Trabalho_POO
             if (disponivel.Capacidade == -1)
             {
                 Console.WriteLine("o numero de convidados excede nossa capacidade maxima de pessoas");
-                return false;
+                return null;
             }
             else if (disponivel.Capacidade == -2)
             {
                 Console.WriteLine("Agendamento cancelado");
-                return false;
+                return null;
             }
             else
             {
@@ -195,11 +195,11 @@ namespace Trabalho_POO
                     {
                         Cerimonias[i] = nova;
                         Console.WriteLine("Cerimonia no espaço {0} confirmada!", disponivel.Tipo);
-                        return true;
+                        return nova;
                     }
                 }
                 Console.WriteLine("Agendamento cancelado");
-                return false;
+                return null;
             }
         }
 
