@@ -143,15 +143,15 @@ namespace Trabalho_POO
 
             if (NivelLower == "standard")
             {
-                precoBase = 120;
+                precoBase = 120 * Espaco.Capacidade;
             }
             else if (NivelLower == "luxo")
             {
-                precoBase = 175;
+                precoBase = 175 * Espaco.Capacidade;
             }
             else if (NivelLower == "premier")
             {
-                precoBase = 230;
+                precoBase = 230 * Espaco.Capacidade;
             }
             else
             {

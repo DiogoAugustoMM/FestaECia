@@ -112,6 +112,52 @@ namespace Trabalho_POO
             }
             else if (opcao == 2)
             {
+                Console.Write("Coloque o CPF para busca: ");
+                string cpf = Console.ReadLine();
+                Console.WriteLine();
+                string txtSalvo = @"C:\Users\gabri\source\repos\TrabalhoPOO/agendamento.txt";
+
+                StringBuilder resultado = new StringBuilder();
+                bool encontrado = false;
+
+                try
+                {
+                    using (StreamReader sr = new StreamReader(txtSalvo))
+                    {
+                        string linha;
+                        while ((linha = sr.ReadLine()) != null)
+                        {
+                            if (linha.Contains("CPF: " + cpf))
+                            {
+                                encontrado = true;
+                            }
+
+                            if (encontrado)
+                            {
+                                resultado.AppendLine(linha);
+                                if (linha.StartsWith("CPF: ") && !linha.Contains(cpf) && resultado.Length > 0)
+                                {
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    if (resultado.Length > 0)
+                    {
+                        Console.WriteLine(resultado.ToString());
+                    }
+                    else
+                    {
+                        Console.WriteLine("CPF não encontrado.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Ocorreu um erro: {ex.Message}");
+                }
+
+                /*
                 string cpf = Console.ReadLine();
                 string txtSalvo = @"C:\Users\gabri\source\repos\TrabalhoPOO/agendamento.txt";
 
@@ -124,7 +170,7 @@ namespace Trabalho_POO
                         Console.WriteLine(dados);
                     }
 
-                }
+                }*/
             }
             else if (opcao == 3) 
             {
