@@ -196,6 +196,8 @@ namespace Trabalho_POO
             int garrafasEspumanteNacional = (int)Math.Ceiling(Convidados / 2.0);
 
             string resumo = $"Resumo da Festa:\n";
+
+            resumo += $"CPF: {CPFNoiva}\n";
             resumo += $"Tipo de Festa: {Nivel}\n";
             resumo += $"Quantidade de Convidados: {Convidados}\n";
             resumo += $"Valor do Espaço: {ValorEspaco:C}\n";

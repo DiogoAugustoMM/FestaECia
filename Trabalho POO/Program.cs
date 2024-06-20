@@ -51,10 +51,15 @@ namespace Trabalho_POO
 
             if (opcao == 1)
             {
+                int quantconvidados = 0;
                 int tipoevento = festaECia.TiposEventos();
-
                 Console.WriteLine("\nQual a quantidade de convidados?");
-                int quantconvidados = int.Parse(Console.ReadLine());
+                try {
+                quantconvidados = int.Parse(Console.ReadLine());
+                } catch (FormatException){
+                    Console.WriteLine("Informe um número INTEIRO de convidados: ");
+                    quantconvidados = int.Parse(Console.ReadLine());
+                }
 
                 Evento evento = festaECia.CriarEvento(new DateTime(2024, 06, 20), quantconvidados, tipoevento);
 
@@ -107,14 +112,14 @@ namespace Trabalho_POO
             }
             else if (opcao == 2)
             {
-                //string cpf = Console.ReadLine();
+                string cpf = Console.ReadLine();
                 string txtSalvo = @"C:\Users\gabri\source\repos\TrabalhoPOO/agendamento.txt";
 
                 using (StreamReader sr = new StreamReader(txtSalvo))
                 {
                     string dados;
 
-                    while ((dados = sr.ReadLine()) != null)
+                    while ((dados = sr.ReadLine()) == "CPF: " + cpf || (dados = sr.ReadLine()) != null)
                     {
                         Console.WriteLine(dados);
                     }
