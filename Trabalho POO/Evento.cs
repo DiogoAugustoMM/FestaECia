@@ -11,10 +11,8 @@ namespace Trabalho_POO
         public Espaco Espaco { get; set; }
         public int Convidados { get; set; }
         public DateTime Data { get; set; }
-
         public string CPFNoiva { get; set; }
-
-
+        public string Nivel { get; set; }
         public double ValorEspaco { get; set; }
 
         public Evento(DateTime data, int convidados, Espaco espaco, string cpfnoiva, double valor)
@@ -24,26 +22,27 @@ namespace Trabalho_POO
             this.Espaco = espaco;
             this.CPFNoiva = cpfnoiva;
             this.ValorEspaco = valor;
+            this.Nivel = null;
 
         }
 
-        private double CalcularValorComidas()
+        public double CalcularValorComidas()
         {
             double valorComidas = 0;
             double precoBase = 0;
 
             // Determinar o preço base conforme o tipo de festa
-            string tipoFestaLower = TipoFesta.ToLower();
+            string NivelLower = Nivel.ToLower();
 
-            if (tipoFestaLower == "standard")
+            if (NivelLower == "standard")
             {
                 precoBase = 40;
             }
-            else if (tipoFestaLower == "luxo")
+            else if (NivelLower == "luxo")
             {
                 precoBase = 48;
             }
-            else if (tipoFestaLower == "premier")
+            else if (NivelLower == "premier")
             {
                 precoBase = 60;
             }
@@ -58,7 +57,7 @@ namespace Trabalho_POO
             return valorComidas;
         }
 
-        private double CalcularValorBebidas()
+        public double CalcularValorBebidas()
         {
             double valorBebidas = 0;
 
@@ -96,13 +95,50 @@ namespace Trabalho_POO
             valorTotal += CalcularValorComidas();
 
             // Calcular valor dos serviços adicionais
-             
+
             // ***** FAZER
 
             // Calcular valor das bebidas
             valorTotal += CalcularValorBebidas();
 
             return valorTotal;
-        }   
+        }
+
+        public string GerarResumo()
+        {
+            double valorComidas = CalcularValorComidas();
+            double valorBebidas = CalcularValorBebidas();
+            double valorTotal = valorComidas + valorBebidas + ValorEspaco;
+
+            // Detalhes de bebidas
+            int garrafasAgua = (int)Math.Ceiling(Convidados * 0.5 / 1.5);
+            int garrafasSuco = (int)Math.Ceiling(Convidados * 0.4 / 1);
+            int garrafasRefrigerante = (int)Math.Ceiling(Convidados * 0.4 / 2);
+            int garrafasCervejaComum = (int)Math.Ceiling((double)Convidados * 3);
+            int garrafasEspumanteNacional = (int)Math.Ceiling(Convidados / 2.0);
+            int garrafasEspumanteImportado = (int)Math.Ceiling(Convidados / 2.0);
+
+            string resumo = $"Resumo da Festa:\n";
+            resumo += $"Tipo de Festa: {Nivel}\n";
+            resumo += $"Quantidade de Convidados: {Convidados}\n";
+            resumo += $"Valor do Espaço: {ValorEspaco:C}\n\n";
+
+            resumo += "Detalhes das Comidas:\n";
+            resumo += $"Valor das Comidas: {valorComidas:C}\n\n";
+
+            resumo += "Detalhes das Bebidas:\n";
+            resumo += $"Água: {garrafasAgua} garrafas de 500ml\n";
+            resumo += $"Suco: {garrafasSuco} garrafas de 1L\n";
+            resumo += $"Refrigerante: {garrafasRefrigerante} garrafas de 2L\n";
+            resumo += $"Cerveja Comum: {garrafasCervejaComum} garrafas de 600ml\n";
+            resumo += $"Espumante Nacional: {garrafasEspumanteNacional} garrafas de 750ml\n";
+            resumo += $"Espumante Importado: {garrafasEspumanteImportado} garrafas de 750ml\n";
+            resumo += $"Valor das Bebidas: {valorBebidas:C}\n\n";
+
+            resumo += $"Valor Total da Festa: {valorTotal:C}\n";
+
+            return resumo;
+        }
+
     }
 }

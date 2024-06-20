@@ -9,7 +9,6 @@ namespace Trabalho_POO
     internal class Formatura:Evento
     {
         public int ValorServicos { get; set; }
-        public string Nivel { get; set; }
 
         public Formatura(int convidados, DateTime data, int valorEspaco, Espaco espaco, string cpf) : base(data, convidados, espaco, cpf, valorEspaco)
         {
