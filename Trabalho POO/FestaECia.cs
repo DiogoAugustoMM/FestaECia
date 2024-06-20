@@ -118,8 +118,36 @@ namespace Trabalho_POO
 
         public bool CriarEvento(DateTime data, int convidados, int tipoEvento)
         {
-            Console.WriteLine("digite seu cpf");
-            string cpf = Console.ReadLine();
+            string cpf;
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Digite seu CPF (somente números, 11 dígitos):");
+                    cpf = Console.ReadLine();
+
+                    // Verifica se a entrada contém exatamente 11 caracteres
+                    if (cpf.Length != 11)
+                    {
+                        throw new FormatException("O CPF deve conter exatamente 11 dígitos.");
+                    }
+
+                    // Tenta converter a entrada em um número
+                    long cpfNumerico = long.Parse(cpf);
+
+                    // Se a conversão for bem-sucedida e a entrada tiver 11 dígitos, a validação está concluída
+                    break;
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine("Erro: " + ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro: Entrada inválida. Por favor, digite um CPF válido.");
+                }
+            }
+
             //cria a cerimonia com o espaço ideal
             Espaco disponivel = VerificaProximaData(data, convidados);
             if (disponivel.Capacidade == -1)
